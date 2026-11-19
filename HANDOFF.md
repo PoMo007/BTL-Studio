@@ -59,6 +59,7 @@ agent/ (Python)  <->  LLM API (DeepSeek / Gemini / ...)
 - [ ] Agent v1: connect, `hello`/protocol check, send `state` to the LLM, get commands back, `propose`, show result.
 - [ ] First task end-to-end: spacing of audio clips by 4 bars + named patterns on track 2.
 - [ ] Diagnostics script.
+- [x] `tools/` patch workflow (Pack/Sync/Undo) for AIs without GitHub; untested on Windows.
 - [x] Installer also updates this repo (agent zip download, no git needed).
 
 ## Decisions

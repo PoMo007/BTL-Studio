@@ -30,3 +30,8 @@ In short:
   owner confirmed. End each task with "what to click to test it" for the owner.
 - Token limits are real: finish a coherent unit of work, push it, and leave `TASKS.md` so the next assistant can
   continue exactly where you stopped.
+
+## No git access? (patch workflow)
+If this chat/session cannot push to GitHub, end every task with ONE patch in the format of `docs/PATCH-FORMAT.md`
+(full files, including updated `TASKS.md` and HANDOFF Status). The owner copies it and runs `tools/Sync.bat`, which
+commits and pushes. The owner starts a chat by pasting the output of `tools/Pack.bat`.

@@ -13,7 +13,10 @@ Format: `[ ]` open, `[x]` done (with date and commit). Newest handoff note at th
 - [ ] 5. Diagnostics script (one text file the owner can paste into a chat).
 - [ ] 6. FL compatibility test pack (docs/FL-COMPAT.md): tiny sample projects + checklist for the owner.
 
+- [x] 0. (2026-11-20) `tools/Sync.bat`, `Pack.bat`, `Sync-Undo.bat` + docs/PATCH-FORMAT.md: patch workflow for AIs without GitHub. UNTESTED on Windows.
+
 ## Needs the owner
+- [ ] Test tools: `git clone`, run `tools\Pack.bat`, then paste a small patch and run `tools\Sync.bat` (see tools/README-FA.txt).
 - [ ] Test installer v2: run `Check-Only.bat`, then `Install-or-Update.bat`, start `C:\DAW\Image-Line\Lemon-Studio\bin\lemonstudio.exe`.
 - [ ] Note: upstream `CI` workflow fails on the fork (not ours, `BTL Build Windows` is green). Optionally disable `CI` in the fork's Actions tab.
 - [ ] Verify installer on Windows 11 and send the newest file from `C:\DAW\Image-Line\Lemon-Studio\logs\`.
@@ -23,3 +26,4 @@ Format: `[ ]` open, `[x]` done (with date and commit). Newest handoff note at th
 - 2026-11-19: repo created, base files, installer v1 and Rule 0 written. Nothing of the agent exists yet.
 
 - 2026-11-20: Fork build is green (run 44610206565), release `latest` has lemonstudio.exe, LemonStudio-Plugins.zip, build-info.json. Installer v2 (download prebuilt, sha256, backups, agent zip update) added; old compile script is now `Build-From-Source.ps1/.bat` (points to PoMo007/Lemon-Studio). README-FA updated. Rule 0: no format/engine change, no FLP round-trip needed. Installer untested on Windows. Next: task 3 (agent v1).
+- 2026-11-20: patch workflow added (tools/). Written without a PowerShell available, so syntax/behaviour not run anywhere yet; if Sync.ps1 errors, ask for the exact message.
