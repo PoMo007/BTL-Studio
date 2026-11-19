@@ -40,7 +40,7 @@ agent/ (Python)  <->  LLM API (DeepSeek / Gemini / ...)
   rendering and import through the protocol, pushing events (poll `events`). Verify against the current docs.
 
 ## Installer (`installer/`)
-- `Install-or-Update.bat` runs `Lemon-Studio-Setup.ps1`: checks Git, Rust (>= 1.85), VS C++ Build Tools, LLVM, installs
+- (v2, current) `Install-or-Update.bat` runs `Lemon-Studio-Setup.ps1`: downloads release `latest` of PoMo007/Lemon-Studio (exe + plugins zip, sha256 check), backs up, updates `agent/` from this repo as a zip. No compiler. The text below describes the old v1, now `Build-From-Source.ps1/.bat`: checks Git, Rust (>= 1.85), VS C++ Build Tools, LLVM, installs
   only what is missing (winget), clones Lemon Studio into `C:\DAW\Image-Line\Lemon-Studio\src`, builds it with cargo,
   builds/installs the VST3+CLAP plugins, copies `lemonstudio.exe` to `bin\`. Run again = smart update (fetch, show changes,
   back up exe + settings, ff-merge, build, replace only on success, roll back source on failure).
@@ -54,11 +54,12 @@ agent/ (Python)  <->  LLM API (DeepSeek / Gemini / ...)
 ## Status
 - [x] Repo created (public), base files, installer v1, rules (CLAUDE.md / AGENTS.md / docs/FL-COMPAT.md) and TASKS.md committed.
 - The task queue lives in `TASKS.md`.
-- [ ] Installer verified on the owner's Windows 11.
+- [x] Installer v2 (prebuilt download from fork release `latest`) committed; fork build green (2026-11-20).
+- [ ] Installer v2 verified on the owner's Windows 11.
 - [ ] Agent v1: connect, `hello`/protocol check, send `state` to the LLM, get commands back, `propose`, show result.
 - [ ] First task end-to-end: spacing of audio clips by 4 bars + named patterns on track 2.
 - [ ] Diagnostics script.
-- [ ] Installer also updates this repo.
+- [x] Installer also updates this repo (agent zip download, no git needed).
 
 ## Decisions
 - Public repo -> never commit keys; `config.json`, logs and project/audio files are git-ignored.
