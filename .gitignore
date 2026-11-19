@@ -1,0 +1,21 @@
+# Secrets: this repo is PUBLIC. Never commit keys.
+config.json
+.env
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local runtime
+logs/
+*.log
+state.json
+backups/
+
+# Projects and audio never belong here
+*.flp
+*.lemon
+*.wav
+*.mp3
