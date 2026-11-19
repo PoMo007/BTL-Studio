@@ -3,6 +3,9 @@
 For any AI assistant (or person) continuing this project in a new chat. Keep this file current: update "Status" and
 "Decisions" at the end of every working session.
 
+## RULE 0 (highest priority)
+FL Studio compatibility in both directions must never break. Read `CLAUDE.md` and `docs/FL-COMPAT.md` before any feature work.
+
 ## Goal
 The owner wants a fast assistant inside a DAW for repetitive tasks, driven by prompts, e.g.
 "put a 4-bar gap between every audio file in the playlist and, for each, add a pattern named after the file on track 2".
@@ -49,7 +52,8 @@ agent/ (Python)  <->  LLM API (DeepSeek / Gemini / ...)
   summary from `state`, last error, log tail) for the owner to paste into a chat.
 
 ## Status
-- [x] Repo created (public), base files, installer v1 committed.
+- [x] Repo created (public), base files, installer v1, rules (CLAUDE.md / AGENTS.md / docs/FL-COMPAT.md) and TASKS.md committed.
+- The task queue lives in `TASKS.md`.
 - [ ] Installer verified on the owner's Windows 11.
 - [ ] Agent v1: connect, `hello`/protocol check, send `state` to the LLM, get commands back, `propose`, show result.
 - [ ] First task end-to-end: spacing of audio clips by 4 bars + named patterns on track 2.
